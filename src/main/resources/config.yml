@@ -1,0 +1,109 @@
+# LorePlugin Configuration
+# 각 능력치의 기본 계수 설정
+
+# 디버그 모드 (콘솔에 상세 로그 출력)
+debug: false
+
+stat-multipliers:
+  공격력: 1.0
+  방어력: 1.0
+  생명력: 1.0
+  치명타확률: 1.0
+  치명타데미지: 1.0
+  흡혈률: 1.0
+  흡혈력: 1.0
+  회피율: 1.0
+  방어구관통력: 1.0
+  이동속도: 1.0
+  재생력: 1.0
+
+# 재생 시스템 설정
+regeneration:
+  # 재생 주기 (틱 단위, 20틱 = 1초)
+  interval: 20
+  # 재생력 1당 회복되는 체력
+  heal-per-point: 1.0
+
+# 적용 가능한 아이템들
+applicable-items:
+  weapons:
+    - WOODEN_SWORD
+    - STONE_SWORD
+    - IRON_SWORD
+    - GOLDEN_SWORD
+    - DIAMOND_SWORD
+    - NETHERITE_SWORD
+    - WOODEN_AXE
+    - STONE_AXE
+    - IRON_AXE
+    - GOLDEN_AXE
+    - DIAMOND_AXE
+    - NETHERITE_AXE
+    - WOODEN_PICKAXE
+    - STONE_PICKAXE
+    - IRON_PICKAXE
+    - GOLDEN_PICKAXE
+    - DIAMOND_PICKAXE
+    - NETHERITE_PICKAXE
+    - WOODEN_SHOVEL
+    - STONE_SHOVEL
+    - IRON_SHOVEL
+    - GOLDEN_SHOVEL
+    - DIAMOND_SHOVEL
+    - NETHERITE_SHOVEL
+    - WOODEN_HOE
+    - STONE_HOE
+    - IRON_HOE
+    - GOLDEN_HOE
+    - DIAMOND_HOE
+    - NETHERITE_HOE
+
+  armor:
+    - LEATHER_HELMET
+    - CHAINMAIL_HELMET
+    - IRON_HELMET
+    - GOLDEN_HELMET
+    - DIAMOND_HELMET
+    - NETHERITE_HELMET
+    - LEATHER_CHESTPLATE
+    - CHAINMAIL_CHESTPLATE
+    - IRON_CHESTPLATE
+    - GOLDEN_CHESTPLATE
+    - DIAMOND_CHESTPLATE
+    - NETHERITE_CHESTPLATE
+    - LEATHER_LEGGINGS
+    - CHAINMAIL_LEGGINGS
+    - IRON_LEGGINGS
+    - GOLDEN_LEGGINGS
+    - DIAMOND_LEGGINGS
+    - NETHERITE_LEGGINGS
+    - LEATHER_BOOTS
+    - CHAINMAIL_BOOTS
+    - IRON_BOOTS
+    - GOLDEN_BOOTS
+    - DIAMOND_BOOTS
+    - NETHERITE_BOOTS
+    - PLAYER_HEAD
+
+# 로어 형식 설정 (각 능력치별로 개별 설정)
+lore-format:
+  공격력: "&c 공격력 +%value%"
+  방어력: "&9 방어력 +%value%"
+  생명력: "&a 생명력 +%value%"
+  치명타확률: "&e 치명타확률 +%value%%"
+  치명타데미지: "&6 치명타데미지 +%value%"
+  흡혈률: "&d 흡혈률 +%value%%"
+  흡혈력: "&d 흡혈력 +%value%"
+  회피율: "&f 회피율 +%value%%"
+  방어구관통력: "&8 방어구관통력 +%value%"
+  이동속도: "&b 이동속도 +%value%%"
+  재생력: "&2  재생력 +%value%"
+
+# 메시지 설정
+messages:
+  stat-added: "&a능력치가 추가되었습니다: &e%stat% +%value%"
+  invalid-stat: "&c잘못된 능력치입니다. 사용 가능한 능력치: 공격력, 방어력, 생명력, 치명타확률, 치명타데미지, 흡혈률, 흡혈력, 회피율, 방어구관통력, 이동속도, 재생력"
+  invalid-item: "&c해당 아이템에는 로어를 적용할 수 없습니다."
+  no-item: "&c손에 아이템을 들고 사용해주세요."
+  config-reloaded: "&a설정이 다시 로드되었습니다."
+  no-permission: "&c권한이 없습니다."

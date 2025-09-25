@@ -1,0 +1,24 @@
+name: LorePlugin
+version: '${project.version}'
+main: com.returns.lore.LorePlugin
+api-version: '1.20'
+authors: [Returns]
+description: A plugin for adding custom stats to items with lore
+
+commands:
+  로어:
+    description: Add stats to items
+    usage: /로어 <stat> <value>
+    aliases: [lore]
+  스텟:
+    description: View your current stats
+    usage: /스텟
+    aliases: [stat, stats]
+
+permissions:
+  lore.admin:
+    description: Admin permissions for lore plugin
+    default: op
+  lore.use:
+    description: Use lore commands
+    default: true
