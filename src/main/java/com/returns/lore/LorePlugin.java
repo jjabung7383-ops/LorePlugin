@@ -32,8 +32,13 @@ public class LorePlugin extends JavaPlugin {
     }
 
     private void registerCommands() {
-        getCommand("로어").setExecutor(new LoreCommand(this));
-        getCommand("스텟").setExecutor(new StatsCommand(this));
+        LoreCommand loreCommand = new LoreCommand(this);
+        StatsCommand statsCommand = new StatsCommand(this);
+
+        getCommand("로어").setExecutor(loreCommand);
+        getCommand("로어").setTabCompleter(loreCommand);
+        getCommand("스텟").setExecutor(statsCommand);
+        getCommand("스텟").setTabCompleter(statsCommand);
     }
 
     private void registerListeners() {

@@ -9,10 +9,15 @@ import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-public class LoreCommand implements CommandExecutor {
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class LoreCommand implements CommandExecutor, TabCompleter {
 
     private final LorePlugin plugin;
 
@@ -117,5 +122,30 @@ public class LoreCommand implements CommandExecutor {
         String itemName = item.getType().name();
         return plugin.getConfig().getStringList("applicable-items.weapons").contains(itemName) ||
                plugin.getConfig().getStringList("applicable-items.armor").contains(itemName);
+    }
+
+    @Override
+    public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
+        List<String> completions = new ArrayList<>();
+
+        if (args.length == 1) {
+            List<String> options = new ArrayList<>();
+
+            for (StatType statType : StatType.values()) {
+                options.add(statType.getDisplayName());
+            }
+            options.add("리로드");
+
+            String input = args[0].toLowerCase();
+            for (String option : options) {
+                if (option.toLowerCase().startsWith(input)) {
+                    completions.add(option);
+                }
+            }
+        } else if (args.length == 2 && !args[0].equalsIgnoreCase("리로드")) {
+            completions.addAll(Arrays.asList("1", "5", "10", "20", "50", "100"));
+        }
+
+        return completions;
     }
 }

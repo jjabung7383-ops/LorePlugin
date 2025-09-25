@@ -8,11 +8,14 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
-public class StatsCommand implements CommandExecutor {
+public class StatsCommand implements CommandExecutor, TabCompleter {
 
     private final LorePlugin plugin;
 
@@ -88,5 +91,10 @@ public class StatsCommand implements CommandExecutor {
             case 이동속도 -> "%";
             default -> "";
         };
+    }
+
+    @Override
+    public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
+        return new ArrayList<>();
     }
 }
